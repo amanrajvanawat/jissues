@@ -22,4 +22,5 @@ before_script:
   - composer install
 
 script:
+  - vendor/bin/phpcs --config-set installed_paths vendor/joomla/coding-standards
   - bin/jtracker test run

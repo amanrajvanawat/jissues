@@ -48,7 +48,7 @@ class Checkstyle extends Test
 			JPATH_ROOT . '/src',
 		];
 
-		$options['standard'] = [JPATH_ROOT . '/build/phpcs/Joomla'];
+		$options['standard'] = [JPATH_ROOT . '/ruleset.xml'];
 
 		$options['showProgress'] = true;
 
