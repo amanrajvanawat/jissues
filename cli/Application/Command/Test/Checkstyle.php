@@ -41,18 +41,16 @@ class Checkstyle extends Test
 	{
 		$this->getApplication()->outputTitle(g11n3t('Test Checkstyle'));
 
-		$options = [];
-
-		$options['files'] = [
-			JPATH_ROOT . '/cli',
-			JPATH_ROOT . '/src',
-			JPATH_ROOT . '/tests',
-			JPATH_ROOT . '/www/index.php',
+		$options = [
+			'files'        => [
+				JPATH_ROOT . '/cli',
+				JPATH_ROOT . '/src',
+				JPATH_ROOT . '/tests',
+				JPATH_ROOT . '/www/index.php',
+			],
+			'standard'     => [JPATH_ROOT . '/ruleset.xml'],
+			'showProgress' => true,
 		];
-
-		$options['standard'] = [JPATH_ROOT . '/ruleset.xml'];
-
-		$options['showProgress'] = true;
 
 		$phpCs = new PHP_CodeSniffer_CLI;
 		$phpCs->checkRequirements();
