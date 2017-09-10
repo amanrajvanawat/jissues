@@ -48,15 +48,18 @@ class Languagefiles extends Get
 
 		$this->description = g11n3t('Retrieve language files.');
 
-		$this->addOption(
-			new TrackerCommandOption(
-				'language', '',
-				g11n3t('Optionally specify a single language to fetch.')
-			)
-		)
+		$this
 			->addOption(
 				new TrackerCommandOption(
-					'provider', '',
+					'language',
+					'',
+					g11n3t('Optionally specify a single language to fetch.')
+				)
+			)
+			->addOption(
+				new TrackerCommandOption(
+					'provider',
+					'',
 					g11n3t('The translation service provider to use.')
 				)
 			);

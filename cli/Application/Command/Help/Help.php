@@ -68,7 +68,9 @@ class Help extends TrackerCommand
 
 		$this->out(
 			sprintf(
-				g11n3t('<b>Usage</b>: %s'), sprintf(' <info>%s</info> <cmd><' . g11n3t('command') . '></cmd> <opt>[' . g11n3t('options') . ']</opt>',
+				g11n3t('<b>Usage</b>: %s'),
+				sprintf(
+					' <info>%s</info> <cmd><' . g11n3t('command') . '></cmd> <opt>[' . g11n3t('options') . ']</opt>',
 					$executable
 				)
 			)

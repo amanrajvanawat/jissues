@@ -28,15 +28,18 @@ class Languageflags extends Make
 	{
 		parent::__construct();
 
-		$this->addOption(
-			new TrackerCommandOption(
-				'imagefile', '',
-				g11n3t('Full path to the combined image file.')
-			)
-		)
+		$this
 			->addOption(
 				new TrackerCommandOption(
-					'cssfile', '',
+					'imagefile',
+					'',
+					g11n3t('Full path to the combined image file.')
+				)
+			)
+			->addOption(
+				new TrackerCommandOption(
+					'cssfile',
+					'',
 					g11n3t('Full path to the CSS file.')
 				)
 			);

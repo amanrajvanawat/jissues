@@ -50,18 +50,24 @@ class Autocomplete extends Make
 
 		$this->description = g11n3t('Generate autocomplete files.');
 
-		$this->addOption(
-			new TrackerCommandOption(
-				'type', 't',
-				sprintf(g11n3t('The type of auto complete file (currently supported: %s).'), "'" . implode("' '", $this->knownTypes) . "'")
+		$this
+			->addOption(
+				new TrackerCommandOption(
+					'type',
+					't',
+					sprintf(
+						g11n3t('The type of auto complete file (currently supported: %s).'),
+						"'" . implode("' '", $this->knownTypes) . "'"
+					)
+				)
 			)
-		)
-		->addOption(
-			new TrackerCommandOption(
-				'echo', 'e',
-				g11n3t('Echo the output instead of writing it to a file.')
-			)
-		);
+			->addOption(
+				new TrackerCommandOption(
+					'echo',
+					'e',
+					g11n3t('Echo the output instead of writing it to a file.')
+				)
+			);
 	}
 
 	/**
