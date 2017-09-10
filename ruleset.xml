@@ -19,10 +19,6 @@
     <exclude-pattern>*/logs/*</exclude-pattern>
     <exclude-pattern>*/node_modules/*</exclude-pattern>
     <exclude-pattern>*/templates/*</exclude-pattern>
-    <exclude-pattern>*/www/fff/*</exclude-pattern>
-    <exclude-pattern>*/www/images/*</exclude-pattern>
-    <exclude-pattern>*/www/media/*</exclude-pattern>
-    <exclude-pattern>*/www/uploads/*</exclude-pattern>
 
     <!-- Exclude 3rd party libraries. -->
     <exclude-pattern>*/vendor/*</exclude-pattern>

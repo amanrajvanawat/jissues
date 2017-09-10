@@ -47,7 +47,7 @@ class Checkstyle extends Test
 			JPATH_ROOT . '/cli',
 			JPATH_ROOT . '/src',
 			JPATH_ROOT . '/tests',
-			JPATH_ROOT . '/www',
+			JPATH_ROOT . '/www/index.php',
 		];
 
 		$options['standard'] = [JPATH_ROOT . '/ruleset.xml'];
