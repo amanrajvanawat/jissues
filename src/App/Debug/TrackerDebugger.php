@@ -194,7 +194,7 @@ class TrackerDebugger implements LoggerAwareInterface, ContainerAwareInterface
 
 		$entry = new \stdClass;
 
-		$entry->sql   = isset($context['sql'])   ? $context['sql']   : 'n/a';
+		$entry->sql   = isset($context['sql']) ? $context['sql'] : 'n/a';
 		$entry->times = isset($context['times']) ? $context['times'] : 'n/a';
 		$entry->trace = isset($context['trace']) ? $context['trace'] : 'n/a';
 

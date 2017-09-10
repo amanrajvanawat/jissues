@@ -103,7 +103,8 @@ class UseractivityModel extends AbstractTrackerDatabaseModel
 			$query->where('t.activity_group = ' . $db->quote($type));
 			$query->order('SUM(CASE WHEN t.activity_group = '
 				. $db->quote($type)
-				. ' THEN t.activity_points ELSE 0 END) DESC, SUM(t.activity_points) + (COUNT(c.id) * 5) DESC');
+				. ' THEN t.activity_points ELSE 0 END) DESC, SUM(t.activity_points) + (COUNT(c.id) * 5) DESC'
+			);
 		}
 		elseif ($this->state->get('list.activity_type') == 3)
 		{

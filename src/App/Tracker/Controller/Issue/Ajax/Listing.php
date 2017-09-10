@@ -35,7 +35,7 @@ class Listing extends AbstractAjaxController
 	 */
 	private function setModelState(IssuesModel $model)
 	{
-		/* @type \JTracker\Application $application */
+		/** @var \JTracker\Application $application */
 		$application = $this->getContainer()->get('app');
 
 		$state = $model->getState();

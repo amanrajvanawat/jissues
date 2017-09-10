@@ -78,7 +78,8 @@ class JoomlacmsPullsListener extends AbstractListener
 	 *
 	 * The category index is provided as the key while the values are containing regular expressions matching the file paths.
 	 *
-	 * @since   1.0
+	 * @var    array
+	 * @since  1.0
 	 */
 	protected $trackerHandledCategories = [
 		self::CATEGORY_JAVASCRIPT => [

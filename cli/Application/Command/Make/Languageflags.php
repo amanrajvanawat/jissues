@@ -35,11 +35,11 @@ class Languageflags extends Make
 			)
 		)
 			->addOption(
-			new TrackerCommandOption(
-				'cssfile', '',
-				g11n3t('Full path to the CSS file.')
-			)
-		);
+				new TrackerCommandOption(
+					'cssfile', '',
+					g11n3t('Full path to the CSS file.')
+				)
+			);
 
 		$this->description = g11n3t('Compile multiple images into a big one (CSS spriting).');
 	}

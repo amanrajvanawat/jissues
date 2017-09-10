@@ -334,7 +334,7 @@ class IssueModel extends AbstractTrackerDatabaseModel
 	 * @param   string   $username  The user name
 	 * @param   string   $sha       The commit SHA.
 	 *
-	 * @return  null|integer  Null - the test was not submitted,
+	 * @return  void|integer  Null - the test was not submitted,
 	 *                        integer - the value of test: 0 - not tested; 1 - tested successfully; 2 - tested unsuccessfully
 	 *
 	 * @since   1.0
@@ -445,16 +445,6 @@ class IssueModel extends AbstractTrackerDatabaseModel
 		$state = $this->getState();
 		$state->set('issue_id', $table->id);
 		$this->setState($state);
-
-		/*
-		@todo see issue #194
-		Store the activity
-		$table = new ActivitiesTable($this->db);
-
-		$src['event']   = 'open';
-		$src['user']    = $src['opened_by'];
-
-		$table->save($src);*/
 
 		return $this;
 	}

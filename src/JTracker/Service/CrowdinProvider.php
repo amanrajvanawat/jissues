@@ -32,15 +32,17 @@ class CrowdinProvider implements ServiceProviderInterface
 	 */
 	public function register(Container $container)
 	{
-		$container->set('ElKuKu\\Crowdin\\Crowdin',
-			function (Container $container)
-			{
-				/* @var \JTracker\Application $app */
-				$app = $container->get('app');
+		$container->alias('crowdin', Crowdin::class)
+			->set(
+				Crowdin::class,
+				function (Container $container)
+				{
+					/** @var \JTracker\Application $app */
+					$app = $container->get('app');
 
-				// Instantiate Crowdin
-				return new Crowdin($app->get('crowdin.project'), $app->get('crowdin.api-key'));
-			}
-		)->alias('crowdin', 'ElKuKu\\Crowdin\\Crowdin');
+					// Instantiate Crowdin
+					return new Crowdin($app->get('crowdin.project'), $app->get('crowdin.api-key'));
+				}
+			);
 	}
 }

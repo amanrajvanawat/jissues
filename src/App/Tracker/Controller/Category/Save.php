@@ -44,7 +44,7 @@ class Save extends AbstractTrackerController
 	 */
 	public function execute()
 	{
-		/* @type \JTracker\Application $app */
+		/** @var \JTracker\Application $app */
 		$app = $this->getContainer()->get('app');
 
 		$app->getUser()->authorize('manage');

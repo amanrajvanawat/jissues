@@ -37,7 +37,8 @@ class Export extends TrackerCommand
 
 		$this->addOption(
 			new TrackerCommandOption('outputdir', 'o',
-				'The directory that should receive the export.')
+				'The directory that should receive the export.'
+			)
 		);
 	}
 

@@ -278,7 +278,8 @@ abstract class LanguageHelper
 		$languages = self::$languages;
 
 		uasort(
-			$languages, function($a, $b)
+			$languages,
+			function ($a, $b)
 			{
 				return strcmp($a['display'], $b['display']);
 			}

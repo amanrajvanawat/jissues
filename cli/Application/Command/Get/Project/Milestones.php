@@ -63,7 +63,7 @@ class Milestones extends Project
 	{
 		$this->out(g11n3t('Fetching milestones...'), false);
 
-		/* @type \Joomla\Database\DatabaseDriver $db */
+		/** @var \Joomla\Database\DatabaseDriver $db */
 		$db = $this->getContainer()->get('db');
 
 		$table = new MilestonesTable($db);

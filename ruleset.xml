@@ -16,6 +16,9 @@
 
     <rule ref="Joomla">
         <exclude name="Generic.Arrays.DisallowShortArraySyntax"/>
+        <exclude name="Joomla.NamingConventions.ValidFunctionName.MethodUnderscore"/>
+        <exclude name="Joomla.NamingConventions.ValidFunctionName.ScopeNotCamelCaps"/>
+        <exclude name="Joomla.NamingConventions.ValidVariableName.MemberNotCamelCaps"/>
         <exclude name="Joomla.NamingConventions.ValidVariableName.NotCamelCaps"/>
     </rule>
 
@@ -23,5 +26,10 @@
         <properties>
             <property name="shortArraySyntax" value="true"/>
         </properties>
+    </rule>
+
+    <rule ref="Joomla.Commenting.FileComment.MissingPackageTag">
+        <exclude-pattern>cli/tracker.php</exclude-pattern>
+        <exclude-pattern>www/index.php</exclude-pattern>
     </rule>
 </ruleset>

@@ -43,7 +43,8 @@ class MonologProvider implements ServiceProviderInterface
 		);
 
 		// Register the web processor
-		$container->share('monolog.processor.web',
+		$container->share(
+			'monolog.processor.web',
 			function ()
 			{
 				return new WebProcessor;
@@ -51,7 +52,8 @@ class MonologProvider implements ServiceProviderInterface
 		);
 
 		// Register the main application handler
-		$container->share('monolog.handler.application',
+		$container->share(
+			'monolog.handler.application',
 			function (Container $container)
 			{
 				/** @var \Joomla\Registry\Registry $config */
@@ -67,14 +69,17 @@ class MonologProvider implements ServiceProviderInterface
 		);
 
 		// Register the database handler
-		$container->share('monolog.handler.database',
+		$container->share(
+			'monolog.handler.database',
 			function (Container $container)
 			{
 				/** @var \Joomla\Registry\Registry $config */
 				$config = $container->get('config');
 
 				// If database debugging is enabled then force the logger's error level to DEBUG, otherwise use the level defined in the app config
-				$level = strtoupper($config->get('debug.database', false) ? 'debug' : $config->get('log.levels.database', $config->get('log.level', 'error')));
+				$databaseDebug    = (bool) $config->get('debug.database', false);
+				$databaseLogLevel = $config->get('log.levels.database', $config->get('log.level', 'error'));
+				$level            = strtoupper($databaseDebug ? 'debug' : $databaseLogLevel);
 
 				return new StreamHandler(
 					$config->get('debug.log-path', JPATH_ROOT) . '/database.log',
@@ -84,7 +89,8 @@ class MonologProvider implements ServiceProviderInterface
 		);
 
 		// Register the application Logger
-		$container->share('monolog.logger.application',
+		$container->share(
+			'monolog.logger.application',
 			function (Container $container)
 			{
 				return new Logger(
@@ -100,7 +106,8 @@ class MonologProvider implements ServiceProviderInterface
 		);
 
 		// Register the database Logger
-		$container->share('monolog.logger.database',
+		$container->share(
+			'monolog.logger.database',
 			function (Container $container)
 			{
 				return new Logger(

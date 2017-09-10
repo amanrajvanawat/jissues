@@ -715,7 +715,7 @@ class TrackerExtension extends \Twig_Extension implements \Twig_Extension_Global
 				$name    = '?';
 			}
 
-			$html[] = '<span class="label"' . ' style="background-color: #' . $bgColor . '; color: ' . $color . ';">';
+			$html[] = '<span class="label" style="background-color: #' . $bgColor . '; color: ' . $color . ';">';
 			$html[] = $name;
 			$html[] = '</span>';
 		}
@@ -742,7 +742,7 @@ class TrackerExtension extends \Twig_Extension implements \Twig_Extension_Global
 		$href = $this->app->get('uri')->base->path
 			. 'tracker/' . $this->app->getProject()->alias . '/' . $number;
 
-		$html[] = '<a href="' . $href . '"' . ' title="' . $title . '"' . '>';
+		$html[] = '<a href="' . $href . '" title="' . $title . '">';
 		$html[] = $closed ? '<del># ' . $number . '</del>' : '# ' . $number;
 		$html[] = '</a>';
 

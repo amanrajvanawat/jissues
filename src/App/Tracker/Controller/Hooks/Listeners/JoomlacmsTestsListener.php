@@ -35,7 +35,12 @@ class JoomlacmsTestsListener extends AbstractListener
 		// Pull the arguments array
 		$arguments = $event->getArguments();
 
-		$status = $this->getStatus($arguments['project'], $arguments['data']->testsSuccess, $arguments['data']->testsFailure, $arguments['issueNumber']);
+		$status = $this->getStatus(
+			$arguments['project'],
+			$arguments['data']->testsSuccess,
+			$arguments['data']->testsFailure,
+			$arguments['issueNumber']
+		);
 
 		$this->createStatus($arguments['github'], $arguments['project'], $arguments['issueNumber'], $status);
 	}

@@ -54,12 +54,12 @@ class Languagefiles extends Get
 				g11n3t('Optionally specify a single language to fetch.')
 			)
 		)
-		->addOption(
-			new TrackerCommandOption(
-				'provider', '',
-				g11n3t('The translation service provider to use.')
-			)
-		);
+			->addOption(
+				new TrackerCommandOption(
+					'provider', '',
+					g11n3t('The translation service provider to use.')
+				)
+			);
 	}
 
 	/**
@@ -109,7 +109,7 @@ class Languagefiles extends Get
 		$this->receiveFiles('JTracker', 'Template');
 
 		// Process app files
-		/* @type \DirectoryIterator $fileInfo */
+		/** @var \DirectoryIterator $fileInfo */
 		foreach (new \DirectoryIterator(JPATH_ROOT . '/src/App') as $fileInfo)
 		{
 			if ($fileInfo->isDot())

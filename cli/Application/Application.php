@@ -178,7 +178,12 @@ class Application extends AbstractCliApplication implements ContainerAwareInterf
 		if (false === class_exists($className))
 		{
 			$this->out()
-				->out(sprintf(g11n3t('Invalid command: %s'), '<error> ' . (($command == $action) ? $command : $command . ' ' . $action) . ' </error>'))
+				->out(
+					sprintf(
+						g11n3t('Invalid command: %s'),
+						'<error> ' . (($command == $action) ? $command : $command . ' ' . $action) . ' </error>'
+					)
+				)
 				->out();
 
 			$alternatives = $this->getAlternatives($command, $action);
@@ -201,7 +206,7 @@ class Application extends AbstractCliApplication implements ContainerAwareInterf
 
 		try
 		{
-			/* @type TrackerCommand $command */
+			/** @var TrackerCommand $command */
 			$command = new $className;
 
 			if ($command instanceof ContainerAwareInterface)

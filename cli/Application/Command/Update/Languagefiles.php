@@ -235,7 +235,12 @@ class Languagefiles extends Update
 					// Call out to Crowdin
 					try
 					{
-						$this->crowdin->translation->upload(new Languagefile($path, $fileName), LanguageHelper::getCrowdinLanguageTag($language), true, true);
+						$this->crowdin->translation->upload(
+							new Languagefile($path, $fileName),
+							LanguageHelper::getCrowdinLanguageTag($language),
+							true,
+							true
+						);
 
 						$this->out('ok... ', false);
 					}

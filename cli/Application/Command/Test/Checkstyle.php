@@ -60,10 +60,10 @@ class Checkstyle extends Test
 		$this
 			->out()
 			->out(
-			$numErrors
+				$numErrors
 				? sprintf('<error> %s </error>', sprintf(g11n4t('Finished with one error', 'Finished with %d errors', $numErrors), $numErrors))
 				: sprintf('<ok>%s</ok>', g11n3t('Success'))
-		);
+			);
 
 		if ($this->exit)
 		{

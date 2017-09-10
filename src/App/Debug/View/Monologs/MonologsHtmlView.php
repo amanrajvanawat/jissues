@@ -39,7 +39,7 @@ class MonologsHtmlView extends AbstractTrackerHtmlView
 
 	/**
 	 * Log lines to show.
-	 * @var int
+	 * @var integer
 	 */
 	protected $count = 20;
 

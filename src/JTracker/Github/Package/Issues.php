@@ -43,7 +43,7 @@ class Issues extends Package
 	 * @since   1.0
 	 * @throws  \DomainException
 	 */
-	public function create($user, $repo, $title, $body = null, $assignee = null, $milestone = null, array $labels = array(), array $assignees = array())
+	public function create($user, $repo, $title, $body = null, $assignee = null, $milestone = null, array $labels = [], array $assignees = [])
 	{
 		// Build the request path.
 		$path = '/repos/' . $user . '/' . $repo . '/issues';
@@ -88,7 +88,7 @@ class Issues extends Package
 	 * @since   1.0
 	 * @throws  \DomainException
 	 */
-	public function edit($user, $repo, $issueId, $state = null, $title = null, $body = null, $assignee = null, $milestone = null, array $labels = null)
+	public function edit($user, $repo, $issueId, $state = null, $title = null, $body = null, $assignee = null, $milestone = null, array $labels = [])
 	{
 		// Build the request path.
 		$path = '/repos/' . $user . '/' . $repo . '/issues/' . (int) $issueId;
@@ -127,15 +127,10 @@ class Issues extends Package
 		}
 
 		// If labels are set add them to the data object.
-		if (isset($labels))
+		if (!empty($labels))
 		{
 			// Ensure that we have a non-associative array.
-			if (isset($labels))
-			{
-				$labels = array_values($labels);
-			}
-
-			$data->labels = $labels;
+			$data->labels = array_values($labels);
 		}
 
 		// Encode the request data.
@@ -184,7 +179,8 @@ class Issues extends Package
 	 * @throws  \DomainException
 	 */
 	public function getList($filter = null, $state = null, $labels = null, $sort = null,
-		$direction = null, \DateTime $since = null, $page = 0, $limit = 0)
+		$direction = null, \DateTime $since = null, $page = 0, $limit = 0
+	)
 	{
 		// Build the request path.
 		$path = '/issues';
@@ -247,7 +243,8 @@ class Issues extends Package
 	 * @throws  \DomainException
 	 */
 	public function getListByRepository($user, $repo, $milestone = null, $state = null, $assignee = null, $mentioned = null, $labels = null,
-		$sort = null, $direction = null, \DateTime $since = null, $page = 0, $limit = 0)
+		$sort = null, $direction = null, \DateTime $since = null, $page = 0, $limit = 0
+	)
 	{
 		// Build the request path.
 		$path = '/repos/' . $user . '/' . $repo . '/issues';

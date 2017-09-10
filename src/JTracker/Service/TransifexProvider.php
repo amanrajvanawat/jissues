@@ -33,20 +33,22 @@ class TransifexProvider implements ServiceProviderInterface
 	 */
 	public function register(Container $container)
 	{
-		return $container->set('BabDev\\Transifex\\Transifex',
-			function (Container $container)
-			{
-				$options = new Registry;
+		$container->alias('transifex', Transifex::class)
+			->set(
+				Transifex::class,
+				function (Container $container)
+				{
+					$options = new Registry;
 
-				/* @var \JTracker\Application $app */
-				$app = $container->get('app');
+					/** @var \JTracker\Application $app */
+					$app = $container->get('app');
 
-				$options->set('api.username', $app->get('transifex.username'));
-				$options->set('api.password', $app->get('transifex.password'));
+					$options->set('api.username', $app->get('transifex.username'));
+					$options->set('api.password', $app->get('transifex.password'));
 
-				// Instantiate Transifex
-				return new Transifex($options);
-			}
-		)->alias('transifex', 'BabDev\\Transifex\\Transifex');
+					// Instantiate Transifex
+					return new Transifex($options);
+				}
+			);
 	}
 }
