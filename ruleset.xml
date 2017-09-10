@@ -7,9 +7,22 @@
     <arg value="sp"/>
     <arg name="colors" />
 
-    <!-- Exclude folders not containing production code -->
+    <!-- Exclude folders not containing production code or PHP files -->
     <exclude-pattern>*/.github/*</exclude-pattern>
-    <exclude-pattern>*/.travis/*</exclude-pattern>
+    <exclude-pattern>*/.openshift/*</exclude-pattern>
+    <exclude-pattern>*/.vagrant/*</exclude-pattern>
+    <exclude-pattern>*/bower_components/*</exclude-pattern>
+    <exclude-pattern>*/build/*</exclude-pattern>
+    <exclude-pattern>*/cache/*</exclude-pattern>
+    <exclude-pattern>*/Documentation/*</exclude-pattern>
+    <exclude-pattern>*/etc/*</exclude-pattern>
+    <exclude-pattern>*/logs/*</exclude-pattern>
+    <exclude-pattern>*/node_modules/*</exclude-pattern>
+    <exclude-pattern>*/templates/*</exclude-pattern>
+    <exclude-pattern>*/www/fff/*</exclude-pattern>
+    <exclude-pattern>*/www/images/*</exclude-pattern>
+    <exclude-pattern>*/www/media/*</exclude-pattern>
+    <exclude-pattern>*/www/uploads/*</exclude-pattern>
 
     <!-- Exclude 3rd party libraries. -->
     <exclude-pattern>*/vendor/*</exclude-pattern>
@@ -30,6 +43,7 @@
 
     <rule ref="Joomla.Commenting.FileComment.MissingPackageTag">
         <exclude-pattern>cli/tracker.php</exclude-pattern>
+        <exclude-pattern>tests/bootstrap.php</exclude-pattern>
         <exclude-pattern>www/index.php</exclude-pattern>
     </rule>
 </ruleset>

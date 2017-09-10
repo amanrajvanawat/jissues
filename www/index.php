@@ -99,7 +99,7 @@ define('JTRACKER_START_MEMORY', memory_get_usage());
 	{
 		$app = $container->get('app');
 
-		// Set the logger for the application.  We're doing it here because there is a recursion issue with correct service resolution that needs to be fixed.
+		// Set the logger for the application.  We're doing it here because there is a recursion issue with service resolution that needs to be fixed.
 		$app->setLogger($container->get('monolog'));
 
 		$app->mark('Application started');
